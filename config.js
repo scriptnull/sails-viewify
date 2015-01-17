@@ -1,4 +1,8 @@
-module.exports = { 
+/**
+ * Example
+ *
+ *
+  module.exports = { 
 	template : 	[
 		{
 			type : 'string' ,
@@ -15,4 +19,13 @@ module.exports = {
 			]
 		}
 		]
-}
+ } 
+
+ *
+ **/
+
+module.exports = { 
+	template : 	[
+
+		]
+};
