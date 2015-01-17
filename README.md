@@ -62,7 +62,7 @@ What if we write our model and try to generate these fields for us based on the 
 You could use frontend frameworks like [angular.js](https://angularjs.org) to do this.But there may be cases where you want to write the html code manually in order to keep a check on some minor details. ``sails-viewify`` serves this purpose.
 
 ##How To Use 
-Create and navigate to your sails project. Go ahead and create your models and views.
+Create and navigate to your sails project. Go ahead and create your models and controllers.
 
 ```bash
 sails new myproject 
@@ -81,7 +81,7 @@ sails-viewify init
 ```
 This creates two files namely , 
 - ``config/sails-viewify.js`` - Has the configuration details.
-- ``viewify_input.txt`` - Refer ```sails-viewify escape``` for usage.
+- ``viewify_input.txt`` - Refer ```sails-viewify escape```(extended use) for usage.
 	
 Next step is configuring your ``sails-viewify.js`` config file.
 ```javascript
@@ -119,10 +119,44 @@ sails-viewify User UserDetails.ejs
 ```
 
 Now , the view named UserDetails.ejs can be found in your views folder.
+```html
+<p>type of fname is string</p>
+<p>type of lname is string</p>
+<p>type of salary is integer</p>
+```
 
+#####Extended Use
+Lets say , you want to add an id field to each p tag.Then your htmltext in ``config/sails-viewify.js`` would look like
+```javascript
+htmltext : "<p id="{{name}}">type of {{name}} is {{type}}</p>" //invalid 
+```
+The above seen snippet is invalid since the double quotation marks inside the html are not escaped.So the valid syntax would be 
+```javascript
+htmltext : "<p id=\"{{name}}\">type of {{name}} is {{type}}</p>" //valid 
+```
+``sails-viewify`` provides the utility to quickly generate your escaped html strings. It can be done as follows
 
+Write the usual html snippet and copy paste in ``viewify_input.txt`` and run 
+```bash
+sails-viewify escape
+```
+The escaped string can be copied and pasted from ``viewify_output.txt``.
 
 ##Command List 
 - sails-viewify 
 - sails-viewify init
 - sails-viewify escape
+
+##Goals and Plans 
+The main scope of viewify is to speed up the frontend development by reusing the models defined for the backend. However , it doesn't stop with that.
+
+Future release plan includes ,
+- standardizing the ``sails-viewify.js`` configuration file.
+- User Interface for generating the configuration file and doing almost everything.
+- Migrating towards GUI based environment for basic sails frontend development.
+
+##Contribution
+Contributions in any form are welcomed. Some of the areas that need help currently is documentation and writing tests.You are also welcomed to join this project for standardizing the already existing stuff and help to implement the plans mentioned above.
+
+##License
+``sails-viewify`` is licensed under [The MIT License]()
