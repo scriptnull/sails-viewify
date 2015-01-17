@@ -154,9 +154,10 @@ Future release plan includes ,
 - standardizing the ``sails-viewify.js`` configuration file.
 - User Interface for generating the configuration file and doing almost everything.
 - Migrating towards GUI based environment for basic sails frontend development.
+- Video Demo for using sails-viewify.
 
 ##Contribution
-Contributions in any form are welcomed. Some of the areas that need help currently is documentation and writing tests.You are also welcomed to join this project for standardizing the already existing stuff and help to implement the plans mentioned above.
+Contributions in any form are welcomed. Some of the areas that currently need help are documentation and writing tests.You are also welcomed to join this project for standardizing the already existing stuff and for implementing the plans mentioned above.
 
 ##License
-``sails-viewify`` is licensed under [The MIT License]()
+``sails-viewify`` is licensed under [The MIT License](https://github.com/scriptnull/compilex/blob/master/License.md)
