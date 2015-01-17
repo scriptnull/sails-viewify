@@ -158,4 +158,4 @@ Future release plan includes ,
 Contributions in any form are welcomed. Some of the areas that currently need help are documentation and writing tests.You are also welcomed to join this project for standardizing the already existing stuff and for implementing the plans mentioned above.
 
 ##License
-``sails-viewify`` is licensed under [The MIT License](https://github.com/scriptnull/compilex/blob/master/License.md)
+``sails-viewify`` is licensed under [The MIT License](https://github.com/scriptnull/sails-viewify/blob/master/License.md)
