@@ -1,6 +1,8 @@
 sails-viewify
 =============
-Convert your sails models into views.
+``sails-viewify`` is a tool for reusing your [sails models](http://sailsjs.org/#/documentation/reference/waterline/models) to build your [sails views](http://sailsjs.org/#/documentation/concepts/Views) rapidly.It is specifically suited for building web apps that often involve generating HTML forms.
+
+>NOTE : sails-viewify is a helper module for the [sails](npmjs.com/package/sails) project.If you don't know what it is , first go ahead and see [sails](npmjs.com/package/sails).
 
 ##Install
 Install sails-viewify from npm.
@@ -8,10 +10,6 @@ Install sails-viewify from npm.
 ```bash
 npm install -g sails-viewify
 ```
-##Purpose
-sails-viewify is a tool for reusing your [sails models](http://sailsjs.org/#/documentation/reference/waterline/models) for building your views rapidly.
-
-sails-viewify is specifically suited for building web apps that often involve generating HTML forms.
 
 ##Example 
 Let us consider that you have a model called User.
