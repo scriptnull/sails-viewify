@@ -1,0 +1,32 @@
+{
+  "name": "sails-viewify",
+  "version": "1.0.0",
+  "description": "Convert your sails models into views.",
+  "main": "index.js",
+  "bin" : {
+    "sails-viewify" : "index.js"
+  } ,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scriptnull/sails-viewify.git"
+  },
+  "keywords": [
+    "viewify",
+    "sails",
+    "sails-viewify",
+    "views",
+    "mvc"
+  ],
+  "author": "Vishnu Bharathi <vishnubharathi04@gmail.com> (https://twitter.com/scriptnull)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scriptnull/sails-viewify/issues"
+  },
+  "homepage": "https://github.com/scriptnull/sails-viewify",
+  "dependencies": {
+    "js-string-escape": "^1.0.0"
+  }
+}
