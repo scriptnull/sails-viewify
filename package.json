@@ -1,11 +1,11 @@
 {
   "name": "sails-viewify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert your sails models into views.",
   "main": "index.js",
-  "bin" : {
-    "sails-viewify" : "index.js"
-  } ,
+  "bin": {
+    "sails-viewify": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
