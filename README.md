@@ -1,5 +1,7 @@
 sails-viewify
 =============
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scriptnull/sails-viewify?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ``sails-viewify`` is a tool for reusing your [sails models](http://sailsjs.org/#/documentation/reference/waterline/models) to build your [sails views](http://sailsjs.org/#/documentation/concepts/Views) rapidly.It is specifically suited for building web apps that often involve generating HTML forms.
 
 >NOTE : sails-viewify is a helper module for the [sails](npmjs.com/package/sails) project.If you don't know what it is , first go ahead and see [sails](npmjs.com/package/sails).
