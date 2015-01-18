@@ -1,5 +1,10 @@
 sails-viewify
 =============
+[![npm](https://img.shields.io/npm/v/sails-viewify.svg?style=flat-square)](https://www.npmjs.com/package/sails-viewify)
+[![npm](https://img.shields.io/npm/dm/sails-viewify.svg?style=flat-square)](https://www.npmjs.com/package/sails-viewify)
+[![npm](https://img.shields.io/npm/l/sails-viewify.svg?style=flat-square)](https://github.com/scriptnull/sails-viewify/blob/master/License.md)
+[![Gitter chat](https://badges.gitter.im/scriptnull/sails-viewify.png)](https://gitter.im/scriptnull/sails-viewify)
+
 ``sails-viewify`` is a tool for reusing your [sails models](http://sailsjs.org/#/documentation/reference/waterline/models) to build your [sails views](http://sailsjs.org/#/documentation/concepts/Views) rapidly.It is specifically suited for building web apps that often involve generating HTML forms.
 
 >NOTE : sails-viewify is a helper module for the [sails](npmjs.com/package/sails) project.If you don't know what it is , first go ahead and see [sails](npmjs.com/package/sails).
