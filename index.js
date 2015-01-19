@@ -76,10 +76,13 @@ else
 				var type = attributes[obj].type ;	
 				for( var index in template ){
 					var t = template[index];
-					if(type.localeCompare(t.type) === 0 ){
-						var temp =  render(t.htmltext , obj , attributes[obj] , t )
-						str = str.concat(temp + '\n');
-						fs.writeFileSync( destFile , str );
+					//if model has model or collection instead of type , then type === undefined , so 
+					if( type !== undefined ){
+						if(type.localeCompare(t.type) === 0 ){
+							var temp =  render(t.htmltext , obj , attributes[obj] , t )
+							str = str.concat(temp + '\n');
+							fs.writeFileSync( destFile , str );
+						}
 					}
 				}
 			}

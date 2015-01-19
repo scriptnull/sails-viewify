@@ -159,6 +159,8 @@ Future release plan includes ,
 - Migrating towards GUI based environment for basic sails frontend development.
 - Video Demo for using sails-viewify.
 - Current version of ``sails-viewify`` includes the command line tool only . Efforts will be taken to build API for using it programmatically.
+- currently handles types . Support for models and collections.
+- specifying the type of element to be used in model itself.
 
 ##Contribution
 Contributions in any form are welcomed. Some of the areas that currently need help are documentation and writing tests.You are also welcomed to join this project for standardizing the already existing stuff and for implementing the plans mentioned above.
