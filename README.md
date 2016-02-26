@@ -124,9 +124,14 @@ module.exports = {
 - ``template`` - [array] specifies templates to be used for different types of attributes. Note that the type refers to the types used in the model and are available within [waterline](npmjs.com/package/waterline).
     - ``type`` - [string] specifies the type of the attributes used in the model.
     - ``htmltext`` - [string] specifies the html text to be generated for the respective attribute type.
-    - ``specials`` - [array] specifies the special text in the ``htmltext`` field to be replaced by the respective replacer object value
+    - ``collection`` - [string] specifies the collection of the attributes used in the model.
+    - ``beginhtmltext`` - [string] specifies the html text to be generated for the respective attribute collection.
+    - ``endhtmltext`` - [string] specifies the html text to be generated for the respective attribute collection.
+    - ``specials`` - [array] specifies the special text in the ``htmltext`` field to be replaced by the respective replacer object value.
         - ``text`` - [string] special text that is to be replaced by the values from the model.
         -  ``replacer`` - [string] replacer object points to the property of the attribute's object in the model. By default , sails-viewify creates name property which equals the name of the attribute in the model.Other than this , all the properties of the attribute are available.
+    
+    
 
 That's it ! You are ready to generate your view . go ahead and execute 
 
