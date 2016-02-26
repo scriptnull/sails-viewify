@@ -1,6 +1,6 @@
 {
   "name": "sails-viewify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert your sails models into views.",
   "main": "index.js",
   "bin": {
