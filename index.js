@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 // sails-viewify modelname viewname config.js
 var fs = require('fs');
@@ -12,7 +12,7 @@ if(process.argv[2].localeCompare("init") === 0) {
     if(!isSails)
       throw new Error('Not a sails project');
     fs.createReadStream(path.join( __dirname , 'config.js'))
-      .pipe(fs.createWriteStream( path.join(process.cwd() , 'config/sails-viewify.js')));   
+      .pipe(fs.createWriteStream( path.join(process.cwd() , 'config/sails-viewify.js')));
       fs.writeFileSync('viewify_input.txt' , '');
   });
 }
@@ -33,8 +33,8 @@ else if(process.argv[2].localeCompare("escape") === 0) {
 }
 
 else {
-  // Other than init & escape 
-  // Check if init is done 
+  // Other than init & escape
+  // Check if init is done
   fs.exists(path.join(process.cwd(), 'config/sails-viewify.js'), function(isInit) {
     if(!isInit)
       new Error('sails-viewify not initialized. Try sails-viewify init');
@@ -51,7 +51,7 @@ else {
       else
         config = require('./' + process.argv[4]);
 
-      // Dependent requires 
+      // Dependent requires
       var model = require(path.join(process.cwd(), 'api', 'models', process.argv[2] + '.js'));
       var attributes = model.attributes ;
       var template = config.template;
@@ -67,7 +67,7 @@ else {
             htmltext = htmltext.split(specialObj.text).join(objName);
           }
           else if(obj[specialObj.replacer] !== undefined) {
-            htmltext = 
+            htmltext =
               htmltext
                 .split(specialObj.text)
                 .join(obj[specialObj.replacer]);
@@ -89,7 +89,7 @@ else {
           t = template[index];
 
           // if model has model or collection instead of type,
-          // then type === undefined, so 
+          // then type === undefined, so
           if(type !== undefined) {
             if(type.localeCompare(t.type) === 0) {
               temp = render(t.htmltext, obj, attributes[obj], t);
