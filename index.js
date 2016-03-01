@@ -73,7 +73,7 @@ else if (process.argv[2].localeCompare("escape") === 0) {
 
 
             //          Loop on the Model properties and render it
-            var renderModel = function(attributes, template) {
+            var renderModel = function(attributes, template, renderedModel) {
                 var type;
                 var collection;
                 var t;
@@ -95,8 +95,15 @@ else if (process.argv[2].localeCompare("escape") === 0) {
                         }
 
                         // If model has a collection and the template is defined
+
+
                         if (collection !== undefined) {
-                            if (collection.localeCompare(t.collection) === 0) {
+
+
+                            if (collection.localeCompare(t.collection) === 0 && renderedModel.indexOf(collection) < 0) {
+                                var nextRenderedModel = renderedModel.slice();
+                                ;
+                                nextRenderedModel.push(collection);
                                 var collectionModel;
                                 var collectionAttributes
                                     //1) Write begin of the collection
@@ -109,21 +116,25 @@ else if (process.argv[2].localeCompare("escape") === 0) {
                                 collectionModel = require(path.join(process.cwd(), 'api', 'models', t.collection + '.js'));
                                 collectionAttributes = collectionModel.attributes;
                                 //2) Write the collection
-                                renderModel(collectionAttributes, template);
+                                renderModel(collectionAttributes, template, nextRenderedModel);
+
                                 //3) Write begin of the collection
                                 if (t.endhtmltext !== undefined) {
                                     temp = render(t.endhtmltext, obj, attributes[obj], t)
                                     str = str.concat(temp + '\n');
                                     fs.writeFileSync(destFile, str);
                                 }
+                            } else {
+                                console.log("Infinite loop not treathed");
                             }
                         }
+
 
                     }
                 }
             }
-
-            renderModel(attributes, template);
+            var renderedModel = new Array(process.argv[2]);
+            renderModel(attributes, template, renderedModel);
         }
     });
 }
