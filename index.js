@@ -100,32 +100,34 @@ else if (process.argv[2].localeCompare("escape") === 0) {
                         if (collection !== undefined) {
 
 
-                            if (collection.localeCompare(t.collection) === 0 && renderedModel.indexOf(collection) < 0) {
-                                var nextRenderedModel = renderedModel.slice();
-                                ;
-                                nextRenderedModel.push(collection);
-                                var collectionModel;
-                                var collectionAttributes
+                            if (collection.localeCompare(t.collection) === 0) {
+                                if (renderedModel.indexOf(collection) < 0) {
+                                    var nextRenderedModel = renderedModel.slice();
+                                    var collectionModel;
+                                    var collectionAttributes;
+                                    // Adding the model for next recursive control in function renderModel()
+                                    nextRenderedModel.push(collection);
                                     //1) Write begin of the collection
-                                if (t.beginhtmltext !== undefined) {
-                                    temp = render(t.beginhtmltext, obj, attributes[obj], t)
-                                    str = str.concat(temp + '\n');
-                                    fs.writeFileSync(destFile, str);
-                                }
-                                //Get the collection model to render 
-                                collectionModel = require(path.join(process.cwd(), 'api', 'models', t.collection + '.js'));
-                                collectionAttributes = collectionModel.attributes;
-                                //2) Write the collection
-                                renderModel(collectionAttributes, template, nextRenderedModel);
+                                    if (t.beginhtmltext !== undefined) {
+                                        temp = render(t.beginhtmltext, obj, attributes[obj], t)
+                                        str = str.concat(temp + '\n');
+                                        fs.writeFileSync(destFile, str);
+                                    }
+                                    //Get the collection model to render 
+                                    collectionModel = require(path.join(process.cwd(), 'api', 'models', t.collection + '.js'));
+                                    collectionAttributes = collectionModel.attributes;
+                                    //2) Write the collection
+                                    renderModel(collectionAttributes, template, nextRenderedModel);
 
-                                //3) Write begin of the collection
-                                if (t.endhtmltext !== undefined) {
-                                    temp = render(t.endhtmltext, obj, attributes[obj], t)
-                                    str = str.concat(temp + '\n');
-                                    fs.writeFileSync(destFile, str);
+                                    //3) Write begin of the collection
+                                    if (t.endhtmltext !== undefined) {
+                                        temp = render(t.endhtmltext, obj, attributes[obj], t)
+                                        str = str.concat(temp + '\n');
+                                        fs.writeFileSync(destFile, str);
+                                    }
+                                } else {
+                                    console.log("Warning : sails-viewify try to render collection generating an infinite loop. (model : " + collection + " in model: " + renderedModel[renderedModel.length - 1]+")");
                                 }
-                            } else {
-                                console.log("Infinite loop not treathed");
                             }
                         }
 
